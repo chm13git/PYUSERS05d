@@ -1,9 +1,0 @@
-Cabeçalho: Informações que sejam importantes na mesma linha
-============================
-Comissão= Metarea
-Latitude mais ao Norte(º)= 10
-Latitude mais ao Sul(º)= -45
-Longitude mais à Oeste(°)= -24
-Latitude mais à Leste (º)= -68
-Camada vertical(m)= 0
-

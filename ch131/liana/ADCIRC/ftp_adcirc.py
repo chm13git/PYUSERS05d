@@ -19,7 +19,7 @@
 # áreas: bg, sig, ssib
 # =====================================================================>
 
-
+print('teste para o GIT')
 
 # IMPORTACAO DE BIBLIOTECAS
 import datetime, time

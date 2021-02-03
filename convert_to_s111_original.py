@@ -32,7 +32,6 @@ if len(sys.argv)==4: # usuário entra com a data desejada
         mon   = int(sys.argv[2])
         day   = int(sys.argv[3])
 else: # usuário não entra com a data desejada. roda a data corrente
-        # ~ fdata = open('/home/operador/datas/datacorrente00')
         fdata = open('/home/pyusers/ch131/liana/ADCIRC/datas/datacorrente00')
         datacorrente = fdata.readlines()
         datacorrente = datacorrente[0][0:-1]

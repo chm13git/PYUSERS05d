@@ -19,7 +19,11 @@
 # áreas: bg, sig, ssib
 # =====================================================================>
 
+<<<<<<< HEAD:ftp_adcirc.py
+print('teste para o git 1')
+=======
 print('teste para o git 1")
+>>>>>>> 91ee379f09dc8554dc56b3d07209e159b13dbecf:ch131/liana/ADCIRC/ftp_adcirc.py
 
 # IMPORTACAO DE BIBLIOTECAS
 import datetime, time

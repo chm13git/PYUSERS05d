@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-# OP
-=======
-# DESENVOLVIMENTO
->>>>>>> 15b9ae6b6a3702eb0bc9789eb7205ff19776e573

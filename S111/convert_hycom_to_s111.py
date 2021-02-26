@@ -7,7 +7,7 @@
 # Script para converter os dados .nc do HYCOM no formato S111 (.h5) usando a versão nova da NOAA
 # Autor: 1T (T) Liana
 # Criado em: 18FEV021
-# Ultima atualizacao: 25FEV2021
+# Ultima atualizacao: 26FEV2021
 # 
 # ==============================================================================================>
 
@@ -39,11 +39,11 @@ else: # usuário não entra com a data desejada. roda a data corrente
 
 ### Diretorios
 s111dir   = '/home/pyusers/ch131/S111'
-shapedir  = f'{s111dir}/shapes'
-h5dir     = f'{s111dir}/hdf5'   
+outputdir = f'{s111dir}/output/{year}{mon:02d}{day:02d}'   
 ncdir     = f'{s111dir}/netcdf' 
-gtiffdir  = f'{s111dir}/geotiff'
 
+if not os.path.exists(outputdir):
+    os.makedirs(outputdir)
 
 ### Arquivo e variaveis
 hycomfile = f'{ncdir}/Metarea_{year}{mon:02d}{day:02d}.nc'
@@ -67,7 +67,7 @@ start_date = datetime.datetime(year, mon, day, 0, 0, 0) # dia inicial da previs�
 datelist   = []
 for x in range (0, nctime, 3): # gerar dados de 3 em 3h
     datelist.append(start_date + datetime.timedelta(hours=x)) # criando lista de datas para gerar os .tiff
-end_date = datelist[-1] # dia final da previsão
+end_date = datelist[-1]        # dia final da previsão
 
 
 ### Configurações
@@ -111,7 +111,7 @@ update_meta        = {'dateTimeOfLastRecord': f'{end_date}',
 
 
 ## Criando arquivo .h5 vazio para preencher com os dados
-data_file = s111.utils.create_s111(f"{h5dir}/S111BR_{year}{mon:02d}{day:02d}T00Z_HYCOM_TYP2.h5")
+data_file = s111.utils.create_s111(f"{outputdir}/S111BR_{year}{mon:02d}{day:02d}T00Z_HYCOM_TYP2.h5")
 
 
 ### Convertendo para o formato S111
@@ -128,7 +128,7 @@ print('HYCOM model to S111 --> ok')
 
 ### Convertendo para GeoTIFF
 print('Making GeoTIFF...')
-#s111.utils.to_geotiff(f"{h5dir}", f"{gtiffdir}")
+#s111.utils.to_geotiff(f"{outputdir}", f"{outputdir}")
 
 print('Making GeoTIFF      --> ok')
 

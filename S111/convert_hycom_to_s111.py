@@ -38,7 +38,7 @@ else: # usuário não entra com a data desejada. roda a data corrente
 
 
 ### Diretorios
-s111dir   = '/home/pyusers/ch131/liana/S111'
+s111dir   = '/home/pyusers/ch131/S111'
 shapedir  = f'{s111dir}/shapes'
 h5dir     = f'{s111dir}/hdf5'   
 ncdir     = f'{s111dir}/netcdf' 

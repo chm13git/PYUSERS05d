@@ -65,7 +65,7 @@ dir_cor   = (np.arctan2(u_cor, v_cor)*(180/np.pi))+180 # direção em graus
 ## Datas
 start_date = datetime.datetime(year, mon, day, 0, 0, 0) # dia inicial da previsão 
 datelist   = []
-for x in range (0, nctime, 3): # gerar dados de 3 em 3h
+for x in range (0, nctime, 6): # gerar dados de 3 em 3h
     datelist.append(start_date + datetime.timedelta(hours=x)) # criando lista de datas para gerar os .tiff
 end_date = datelist[-1]        # dia final da previsão
 

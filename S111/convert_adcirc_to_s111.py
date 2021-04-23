@@ -100,7 +100,7 @@ metadata = {'horizontalDatumReference':      'EPSG',
             'commonPointRule':                  3, # 'high'
             'interpolationType':               10, # 'discrete'
             'typeOfCurrentData':                6, # Hydrodynamic model forecast (F)
-            'methodCurrentsProduct':         'HYCOM_Hydrodynamic_Model_Forecasts',
+            'methodCurrentsProduct':         'ADCIRC_Hydrodynamic_Model_Forecasts',
             'datetimeOfFirstRecord':         f'{start_date}'} 
 
 
@@ -114,7 +114,7 @@ update_meta        = {'dateTimeOfLastRecord': f'{end_date}',
 
 
 ## Criando arquivo .h5 vazio para preencher com os dados
-data_file = s111.utils.create_s111(f"{outputdir}/S111BR_{year}{mon:02d}{day:02d}T00Z_HYCOM_TYP2.h5")
+data_file = s111.utils.create_s111(f"{outputdir}/S111BR_{year}{mon:02d}{day:02d}T00Z_ADCIRC_TYP2.h5")
 
 
 ### Convertendo para o formato S111
@@ -126,7 +126,7 @@ for speed, direction, datetime_value in zip(speed_cor, dir_cor, datelist):
 s111.utils.update_metadata(data_file, grid_properties, update_meta)
 s111.utils.write_data_file(data_file)
 
-print('HYCOM model to S111 --> ok')
+print('ADCIRC model to S111 --> ok')
 
 
 ### Convertendo para GeoTIFF
